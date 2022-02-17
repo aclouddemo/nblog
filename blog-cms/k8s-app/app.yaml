@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blog-cms
+  labels:
+    app: blog-cms
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: blog-cms
+  template:
+    metadata:
+      labels:
+        app: blog-cms
+    spec:
+      containers:
+      - name: blog-cms
+        image: registry.cn-shanghai.aliyuncs.com/***/blog-cms:latest  # 修改为自己的镜像
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+      - name: image-secret-shanghai
+      - name: image-secret-shanghai-vpc # 修改为自己的secret

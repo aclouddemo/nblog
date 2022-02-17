@@ -1,0 +1,38 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: blog
+data:
+  enable-underscores-in-headers: "true"
+spec:
+  rules:
+  - host: "blog-api.aliyun.com"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: blog-api
+            port:
+              number: 8090
+  - host: "blog-cms.aliyun.com"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: blog-cms
+            port:
+              number: 80
+  - host: "blog-view.aliyun.com"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: blog-view
+            port:
+              number: 80

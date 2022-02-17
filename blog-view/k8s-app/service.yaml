@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: blog-view
+  labels:
+    test: test
+    labele2: label
+spec:
+  ports:
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: 80
+  selector:
+    app: blog-view
+  sessionAffinity: None
+  type: ClusterIP
