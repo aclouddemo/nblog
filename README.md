@@ -25,4 +25,4 @@
 2. 分别到3个项目下执行docker build . 构建 docker image 并上传到镜像仓库。
 3. 使用每个项目目录下k8s-app文件部署k8s应用，需要修具体的镜像地址
 
-另，具体实现企业业务系统的360度立体监控的方案后续补充。
+企业级业务系统的360度立体监控:https://help.aliyun.com/practice_detail/419529?spm=a2c4g.26937898.0.0.75ed5ab2iGHzIU
